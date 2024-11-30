@@ -17,10 +17,11 @@ namespace Exo.WebApi.Contexts
            if (!optionsBuilder.IsConfigured)
            {
              // Essa string de conexão depende de SUA máquina
-             optionsBuilder.UseSqlServer("User ID=sa;Password=admin;Server=localhost;Database=ExoApi;Trusted_Connection=False;");
+            optionsBuilder.UseSqlServer("User ID=sa;Password=194510;Server=localhost\\SQLEXPRESS;Database=ExoApi1;Trusted_Connection=False;");
+           // optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ExoApi1;Trusted_Connection=True;TrustServerCertificate=True;");
            }
-           // base.OnConfiguring(optionsBuilder);a
         }
         public DbSet<Projeto> Projetos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

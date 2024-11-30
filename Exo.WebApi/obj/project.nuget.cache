@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hUADiDKvb88=",
+  "dgSpecHash": "1tOdIXqiD3s=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonat\\Desktop\\ExoWebAPI\\Exo.WebApi\\Exo.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\jonat\\Desktop\\SENAI-ESTUDOS\\BACK-END\\14 - DESENVOLVIMENTO DE APIs\\ExoWebAPI\\Exo.WebApi\\Exo.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonat\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
