@@ -1,21 +1,29 @@
-# Atividade Web Api
+# Atividade Web API
 
 Este repositório contém o código e as instruções para uma aplicação CRUD básica construída usando .NET e o banco de dados SQL Server.
 
 ## O que você precisará:
 
 - **Visual Studio Code**: Baixe e instale a versão mais recente do Visual Studio Code a partir de [Visual Studio Code](https://code.visualstudio.com/).
-- **SDK .NET**: Baixe e instale o SDK .NET versão 8 a partir de [SDK .NET](https://dotnet.microsoft.com/download).
+- **SDK .NET**: Baixe e instale o SDK .NET versão 6 a partir de [SDK .NET](https://dotnet.microsoft.com/download).
 - **SQL Server Management Studio (SSMS)**: Baixe e instale o SSMS a partir de [SQL Server Management Studio](https://www.microsoft.com/en-us/sql/sql-server-management-studio).
-- **Insomnia ou Postman**: Você precisará de uma ferramenta para testar sua API. Insomnia é uma opção popular, mas o Postman também é uma boa opção.
+- **Insomnia ou Postman**: Você precisará de uma ferramenta para testar sua API. Insomnia é uma opção popular, mas o Postman também é uma boa escolha.
 
 ## O que foi feito:
 
 A aplicação agora contém os seguintes recursos:
 
 - **CRUD de Projetos**: Permite criar, ler, atualizar e excluir projetos. Cada projeto possui as propriedades `NomeDoProjeto`, `Area` e `Status`.
-  
+
 - **CRUD de Usuários**: Foi implementado um CRUD para gerenciar usuários. Cada usuário tem `Email` e `Senha`.
+
+- **Autenticação JWT**: 
+  - Foi implementada uma funcionalidade de autenticação utilizando **JSON Web Tokens (JWT)**.
+  - Agora, ao realizar o login com um e-mail e senha válidos, um token de acesso é gerado. Esse token é necessário para realizar operações protegidas, como **Atualizar** ou **Excluir** um registro.
+  - Detalhes técnicos:
+    - A assinatura do token utiliza o algoritmo **HMAC-SHA256**.
+    - O token expira em 30 minutos a partir do momento de geração.
+    - A chave de autenticação utilizada é definida no código como `exoapi-chave-autenticacao`.
 
 ## O que fazer:
 
@@ -24,8 +32,8 @@ A aplicação agora contém os seguintes recursos:
     - Utilize o arquivo SQL "cria-db.sql" para criar as tabelas necessárias para os projetos e usuários.
 
 2. **Explorar o projeto**:
-    - Abra o arquivo de projeto fornecido ("Atividade Web Api") no Visual Studio Code.
-  
+    - Abra o arquivo de projeto fornecido ("Atividade Web API") no Visual Studio Code.
+
 3. **Completar as operações CRUD**:
     - O CRUD para **Projetos** e **Usuários** já está implementado. Você pode realizar as seguintes operações para ambos:
       - **Criar**: Enviar dados para criar um novo projeto ou usuário.
@@ -46,4 +54,8 @@ A aplicação agora contém os seguintes recursos:
       - `PUT /api/usuarios/{id}` — Atualiza um usuário existente.
       - `DELETE /api/usuarios/{id}` — Exclui um usuário.
 
-## Este README fornece informações básicas sobre como implementar as funcionalidades desta atividade.
+5. **Autenticação JWT**:
+    - **Endpoint de login**: `POST /api/usuarios`.
+    - **Como usar o token**:
+      - Ao realizar login, você receberá um token JWT.
+      - Inclua o token no cabeçalho das requisições protegidas como `Authorization: Bearer {seu_token}`.
